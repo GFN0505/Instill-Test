@@ -11,3 +11,8 @@ Automation in CI/CD Pipelines
 Comprehensive Documentation
 Wide Community Support
 
+For my tests, i validated that three test:
+I validated that the response code was 200
+I validated that my Location/timzone was set to Lagos
+I validated that the weather was Sunny
+
