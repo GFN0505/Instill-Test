@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "426641ba-65dc-46d8-85a7-55cde031f7a6",
+		"name": "Instill Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Instill Test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b4fdb7eb-a0b0-4fc6-bd3e-d934c3450f16",
+						"exec": [
+							"",
+							"const jsonData = pm.response.json();",
+							"const expectedWord = \"Sunny\";",
+							"const weather = jsonData.current.weather[0].main;",
+							"",
+							"pm.test(\"Validate that Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Validate that weather is Sunny in Location\", function () {",
+							"    pm.expect(weather).to.include(expectedWord);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "1d5bdf22-e43f-4ae0-8268-7c17af6e7b95",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "d6ffae3c7360dc14782a0bb4a94843ae",
+						"key": "appid",
+						"in": "query"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/3.0/onecall?lat=6.5244&lon=3.3792&appid=d6ffae3c7360dc14782a0bb4a94843ae",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"3.0",
+						"onecall"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "6.5244"
+						},
+						{
+							"key": "lon",
+							"value": "3.3792"
+						},
+						{
+							"key": "exclude",
+							"value": "hourly,daily",
+							"disabled": true
+						},
+						{
+							"key": "appid",
+							"value": "d6ffae3c7360dc14782a0bb4a94843ae"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
