@@ -15,7 +15,7 @@ public class testFofInstill {
 		//This sets up the updated chromedriver
 		WebDriverManager.chromedriver().setup();
 		
-		//This instantiates and object of Chromedriver
+		//This instantiates an object of Chromedriver
 		WebDriver driver = new ChromeDriver();
 		
 		
